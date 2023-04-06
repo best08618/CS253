@@ -88,15 +88,19 @@ void sort(map<string, int> fq) {
   }
 
   sort(vec.begin(), vec.end(), comp);
-  for (int i = 0; i < 25; ++i) {
+  int s = fq.size();
+  for (int i = 0; i < min(25, s); ++i) {
     cout << vec[i].first << "  -  " << vec[i].second << endl;
   }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+  if (argc == 1) {
+    cout << "Please enter the file_path";
+    return 0;
+  }
   string stop_file_path = "../stop_words.txt";
-  string file_path = "../pride-and-prejudice.txt";
-  // string file_path = "../test.txt";
+  string file_path = argv[1];
   string stopwords[150];
   read_stopword(stop_file_path, stopwords);
   map<string, int> fq = read_file_count(file_path, stopwords);
