@@ -9,9 +9,17 @@ g++ fq_week1.cpp -o fq
 
 ## Week2
 ### Exercise 4.1 
+monolith style 
 ```
 cd week_2
 g++ Four.cpp -o four
 ./four ../pride-and-prejudice.txt 
 ```
 
+### Exercise 5.1 
+cookbook style
+```
+cd week_2
+g++ Five.cpp -o five
+./five ../pride-and-prejudice.txt 
+```

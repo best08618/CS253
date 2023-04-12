@@ -41,12 +41,12 @@ void read_stopword() {
   }
 }
 
-bool in_array(const std::string &value, string *array) {
-  bool check = std::find(array, array + 150, value) != array + 150;
+bool in_array(string value) {
+  bool check = std::find(stopwords, stopwords + 150, value) != stopwords + 150;
   return check;
 }
 
-void read_file_count(string file_path) {
+void read_file(string file_path) {
   ifstream file;
   file.open(file_path);
   string filestring;
@@ -60,21 +60,25 @@ void read_file_count(string file_path) {
       int end = filestring.find(' ');
       while (end != -1) { // Loop until no delimiter is left in the string.
         string tok = filestring.substr(0, end);
-        if (!in_array(tok, stopwords)) {
-          if (fq.find(tok) == fq.end()) {
-            fq.insert(make_pair(tok, 1));
-            tok = "";
-          } else {
-            fq[tok]++;
-            tok = "";
-          }
-        }
+        words.push_back(tok);
         filestring.erase(filestring.begin(), filestring.begin() + end + 1);
         end = filestring.find(' ');
       }
       string tok = filestring.substr(0, end);
-      if (tok.length() > 1 && !in_array(tok, stopwords)) {
-        fq[tok]++;
+      if (tok.length() > 1) {
+        words.push_back(tok);
+      }
+    }
+  }
+}
+
+void frequencies() {
+  for (int i = 0; i < words.size(); i++) {
+    if (!in_array(words[i])) {
+      if (fq.find(words[i]) == fq.end()) {
+        fq[words[i]] = 1;
+      } else {
+        fq[words[i]]++;
       }
     }
   }
@@ -106,6 +110,7 @@ int main(int argc, char *argv[]) {
   }
   string file_path = argv[1];
   read_stopword();
-  read_file_count(file_path);
+  read_file(file_path);
+  frequencies();
   sort();
 }
