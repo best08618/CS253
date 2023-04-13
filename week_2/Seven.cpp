@@ -15,8 +15,8 @@ int main(int argc, char *argv[]) {
     stopwords.push_back(str);
   ifstream inFile(argv[1]);
   stringstream strStream;
-  strStream << inFile.rdbuf(); // read the file
-  string ds = strStream.str(); // str holds the content of the file
+  strStream << inFile.rdbuf();
+  string ds = strStream.str();
   transform(ds.begin(), ds.end(), ds.begin(), ::tolower);
   std::regex rgx("[^a-zA-Z]+");
   std::sregex_token_iterator iter(ds.begin(), ds.end(), rgx, -1), end;

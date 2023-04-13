@@ -23,3 +23,11 @@ cd week_2
 g++ Five.cpp -o five
 ./five ../pride-and-prejudice.txt 
 ```
+
+### Exercise 7.1 
+Code golf Style
+```
+cd week_2
+g++ Seven.cpp -o seven
+./seven ../pride-and-prejudice.txt 
+```
