@@ -114,6 +114,6 @@ int main(int argc, char *argv[]) {
     }
   }
   for (int i = 0; i < 25; ++i) {
-    std::cout << fq[i].first << " " << fq[i].second << endl;
+    std::cout << fq[i].first << " - " << fq[i].second << endl;
   }
 }
