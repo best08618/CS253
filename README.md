@@ -68,3 +68,28 @@ cd week_2
 g++ Seven.cpp -o seven
 ./seven ../pride-and-prejudice.txt 
 ```
+
+## Week3
+### Exercise 8.1 
+Infinite Mirror style
+```
+cd week_3
+g++ Eight.cpp -o eight
+./eight ../pride-and-prejudice.txt 
+```
+### Exercise 9.1 
+Candy factory style
+```
+cd week_3
+g++ Nine.cpp -o nine
+./nine ../pride-and-prejudice.txt 
+```
+
+### Exercise 10.1 
+The One style
+```
+cd week_3
+g++ Ten.cpp -o ten
+./ten ../pride-and-prejudice.txt 
+```
+
