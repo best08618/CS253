@@ -65,7 +65,7 @@ data_storage_obj['words']().forEach(item => {
 
 fq_result = word_freqs_obj['sorted']();
 for (let i = 0; i < Math.min(25,fq_result.length); i++) {
-    console.log(fq_result[i].word, '-', fq_result[i].frequency)
+    console.log(fq_result[i].word, ' - ', fq_result[i].frequency)
 }
 
 
