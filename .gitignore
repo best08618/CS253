@@ -2,3 +2,6 @@
 .ccls-cache/*
 replit.nix
 *.class
+.*
+week_7/node_modules/*
+package*
