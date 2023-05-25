@@ -194,8 +194,8 @@ private:
 public:
   void run() {
     while (!stopMe) {
-      cout << "" << flush;
       if (!wf_q.empty()) {
+        cout << wf_q.front() << flush;
         string message = wf_q.front();
         wf_q.pop();
         if (message.compare("die") == 0) {
