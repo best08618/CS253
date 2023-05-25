@@ -137,5 +137,5 @@ cd week_5
 node TwentyFive.js ../pride-and-prejudice.txt 
 ```
 
-## Week6
-README is in the week_6 folder. 
+## From Week6~ 
+All README files is in the each week folder. 
