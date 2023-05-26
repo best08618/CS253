@@ -11,6 +11,7 @@
 #include <sstream>
 #include <string>
 #include <thread>
+#include <unistd.h>
 #include <vector>
 using namespace std;
 
@@ -78,6 +79,7 @@ public:
         string message = stopword_q.front();
         stopword_q.pop();
         if (message.compare("die") == 0) {
+          cout << "die sw" << endl << flush;
           return;
         }
         string data = stopword_data.front();
@@ -146,6 +148,7 @@ public:
         storage_q.pop();
         if (message.compare("die") == 0) {
           cout << "storage die!" << flush;
+          usleep(300000);
           return;
         }
         string data = storage_data.front();
